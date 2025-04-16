@@ -1,1 +1,84 @@
+EXPLORING THE ITEMS TABLE
+
+SELECT * FROM menu_items; -- menu_items table
+
+SELECT COUNT(*) FROM menu_items; -- No of items in the menu
+
+SELECT * FROM menu_items
+ORDER BY price; -- Least item on the menu
+
+SELECT * FROM menu_items
+ORDER BY price DESC; -- Most Expensive Item on the Menu
+
+SELECT COUNT(*) FROM menu_items
+WHERE category="Italian"; -- Italian Dishes on the menu
+
+SELECT * FROM menu_items
+WHERE category="Italian"
+ORDER BY price; -- Least Italian Dish on the menu
+
+SELECT * FROM menu_items
+WHERE category="Italian"
+ORDER BY price DESC; -- Most Expensive Italian Dish On The menu
+
+SELECT category, COUNT(menu_item_id) AS num_dishes
+FROM menu_items
+GROUP BY category; -- Dishes are in each category
+
+SELECT category, AVG(price) AS avg_price
+FROM menu_items
+GROUP BY category; -- Average dish price in each category
+
+-----------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------
+
+EXPLORING THE ORDERS TABLE
+
+SELECT * FROM order_details; -- order_items table
+
+SELECT MIN(order_date), MAX(order_date) FROM order_details; -- Date range of the table
+
+SELECT COUNT(DISTINCT order_id) FROM order_details; -- no of orders were made within this date range
+
+SELECT COUNT(*) FROM order_details; -- no of items ordered within this date range
+
+SELECT order_id, COUNT(item_id) AS num_items
+FROM order_details
+GROUP BY order_id
+ORDER BY num_items DESC; -- orders had the most no of items
+
+SELECT COUNT(*) FROM
+
+(SELECT order_id, COUNT(item_id) AS num_items
+FROM order_details
+GROUP BY order_id
+HAVING num_items>12) AS num_orders; -- Orders had more than 12 items
+
+-----------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------
+
+ANALYZING CUSTOMER BEHAVIOR
+
+SELECT * FROM order_details; -- order_items table
+
+SELECT MIN(order_date), MAX(order_date) FROM order_details; -- Date range of the table
+
+SELECT COUNT(DISTINCT order_id) FROM order_details; -- no of orders were made within this date range
+
+SELECT COUNT(*) FROM order_details; -- no of items ordered within this date range
+
+SELECT order_id, COUNT(item_id) AS num_items
+FROM order_details
+GROUP BY order_id
+ORDER BY num_items DESC; -- orders had the most no of items
+
+SELECT COUNT(*) FROM
+
+(SELECT order_id, COUNT(item_id) AS num_items
+FROM order_details
+GROUP BY order_id
+HAVING num_items>12) AS num_orders; -- Orders had more than 12 items
+
+-------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
 
