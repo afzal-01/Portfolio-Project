@@ -1,4 +1,4 @@
-EXPLORING THE ITEMS TABLE
+--EXPLORING THE ITEMS TABLE--
 
 SELECT * FROM menu_items; -- menu_items table
 
@@ -32,7 +32,7 @@ GROUP BY category; -- Average dish price in each category
 -----------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------
 
-EXPLORING THE ORDERS TABLE
+--EXPLORING THE ORDERS TABLE--
 
 SELECT * FROM order_details; -- order_items table
 
@@ -57,7 +57,7 @@ HAVING num_items>12) AS num_orders; -- Orders had more than 12 items
 -----------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------
 
-ANALYZING CUSTOMER BEHAVIOR
+--ANALYZING CUSTOMER BEHAVIOR--
 
 SELECT * FROM order_details; -- order_items table
 
